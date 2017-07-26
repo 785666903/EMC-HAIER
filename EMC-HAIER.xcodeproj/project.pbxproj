@@ -1,0 +1,572 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		904037271F28E5FD00A50433 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 904037261F28E5FD00A50433 /* main.m */; };
+		9040372A1F28E5FD00A50433 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 904037291F28E5FD00A50433 /* AppDelegate.m */; };
+		9040372D1F28E5FD00A50433 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9040372C1F28E5FD00A50433 /* ViewController.m */; };
+		904037301F28E5FD00A50433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9040372E1F28E5FD00A50433 /* Main.storyboard */; };
+		904037321F28E5FD00A50433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 904037311F28E5FD00A50433 /* Assets.xcassets */; };
+		904037351F28E5FD00A50433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 904037331F28E5FD00A50433 /* LaunchScreen.storyboard */; };
+		904037401F28E5FD00A50433 /* EMC_HAIERTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9040373F1F28E5FD00A50433 /* EMC_HAIERTests.m */; };
+		9040374B1F28E5FD00A50433 /* EMC_HAIERUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9040374A1F28E5FD00A50433 /* EMC_HAIERUITests.m */; };
+		904037601F28E65E00A50433 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9040375A1F28E65E00A50433 /* CardViewController.m */; };
+		904037611F28E65E00A50433 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9040375B1F28E65E00A50433 /* iflyMSC.framework */; };
+		904037621F28E65E00A50433 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9040375D1F28E65E00A50433 /* NSData+CommonCrypto.m */; };
+		904037631F28E65E00A50433 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9040375E1F28E65E00A50433 /* LICENSE */; };
+		904037641F28E65E00A50433 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9040375F1F28E65E00A50433 /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9040373C1F28E5FD00A50433 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9040371A1F28E5FC00A50433 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 904037211F28E5FD00A50433;
+			remoteInfo = "EMC-HAIER";
+		};
+		904037471F28E5FD00A50433 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9040371A1F28E5FC00A50433 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 904037211F28E5FD00A50433;
+			remoteInfo = "EMC-HAIER";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		904037221F28E5FD00A50433 /* EMC-HAIER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EMC-HAIER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		904037261F28E5FD00A50433 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		904037281F28E5FD00A50433 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		904037291F28E5FD00A50433 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9040372B1F28E5FD00A50433 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9040372C1F28E5FD00A50433 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9040372F1F28E5FD00A50433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		904037311F28E5FD00A50433 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		904037341F28E5FD00A50433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		904037361F28E5FD00A50433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9040373B1F28E5FD00A50433 /* EMC-HAIERTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EMC-HAIERTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9040373F1F28E5FD00A50433 /* EMC_HAIERTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMC_HAIERTests.m; sourceTree = "<group>"; };
+		904037411F28E5FD00A50433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		904037461F28E5FD00A50433 /* EMC-HAIERUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EMC-HAIERUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9040374A1F28E5FD00A50433 /* EMC_HAIERUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMC_HAIERUITests.m; sourceTree = "<group>"; };
+		9040374C1F28E5FD00A50433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		904037591F28E65E00A50433 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		9040375A1F28E65E00A50433 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
+		9040375B1F28E65E00A50433 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		9040375C1F28E65E00A50433 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		9040375D1F28E65E00A50433 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		9040375E1F28E65E00A50433 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9040375F1F28E65E00A50433 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9040371F1F28E5FD00A50433 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				904037611F28E65E00A50433 /* iflyMSC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		904037381F28E5FD00A50433 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		904037431F28E5FD00A50433 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		904037191F28E5FC00A50433 = {
+			isa = PBXGroup;
+			children = (
+				904037581F28E65E00A50433 /* EMC */,
+				9040375E1F28E65E00A50433 /* LICENSE */,
+				9040375F1F28E65E00A50433 /* README.md */,
+				904037241F28E5FD00A50433 /* EMC-HAIER */,
+				9040373E1F28E5FD00A50433 /* EMC-HAIERTests */,
+				904037491F28E5FD00A50433 /* EMC-HAIERUITests */,
+				904037231F28E5FD00A50433 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		904037231F28E5FD00A50433 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				904037221F28E5FD00A50433 /* EMC-HAIER.app */,
+				9040373B1F28E5FD00A50433 /* EMC-HAIERTests.xctest */,
+				904037461F28E5FD00A50433 /* EMC-HAIERUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		904037241F28E5FD00A50433 /* EMC-HAIER */ = {
+			isa = PBXGroup;
+			children = (
+				904037281F28E5FD00A50433 /* AppDelegate.h */,
+				904037291F28E5FD00A50433 /* AppDelegate.m */,
+				9040372B1F28E5FD00A50433 /* ViewController.h */,
+				9040372C1F28E5FD00A50433 /* ViewController.m */,
+				9040372E1F28E5FD00A50433 /* Main.storyboard */,
+				904037311F28E5FD00A50433 /* Assets.xcassets */,
+				904037331F28E5FD00A50433 /* LaunchScreen.storyboard */,
+				904037361F28E5FD00A50433 /* Info.plist */,
+				904037251F28E5FD00A50433 /* Supporting Files */,
+			);
+			path = "EMC-HAIER";
+			sourceTree = "<group>";
+		};
+		904037251F28E5FD00A50433 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				904037261F28E5FD00A50433 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9040373E1F28E5FD00A50433 /* EMC-HAIERTests */ = {
+			isa = PBXGroup;
+			children = (
+				9040373F1F28E5FD00A50433 /* EMC_HAIERTests.m */,
+				904037411F28E5FD00A50433 /* Info.plist */,
+			);
+			path = "EMC-HAIERTests";
+			sourceTree = "<group>";
+		};
+		904037491F28E5FD00A50433 /* EMC-HAIERUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9040374A1F28E5FD00A50433 /* EMC_HAIERUITests.m */,
+				9040374C1F28E5FD00A50433 /* Info.plist */,
+			);
+			path = "EMC-HAIERUITests";
+			sourceTree = "<group>";
+		};
+		904037581F28E65E00A50433 /* EMC */ = {
+			isa = PBXGroup;
+			children = (
+				904037591F28E65E00A50433 /* CardViewController.h */,
+				9040375A1F28E65E00A50433 /* CardViewController.m */,
+				9040375B1F28E65E00A50433 /* iflyMSC.framework */,
+				9040375C1F28E65E00A50433 /* NSData+CommonCrypto.h */,
+				9040375D1F28E65E00A50433 /* NSData+CommonCrypto.m */,
+			);
+			path = EMC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		904037211F28E5FD00A50433 /* EMC-HAIER */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9040374F1F28E5FD00A50433 /* Build configuration list for PBXNativeTarget "EMC-HAIER" */;
+			buildPhases = (
+				9040371E1F28E5FD00A50433 /* Sources */,
+				9040371F1F28E5FD00A50433 /* Frameworks */,
+				904037201F28E5FD00A50433 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EMC-HAIER";
+			productName = "EMC-HAIER";
+			productReference = 904037221F28E5FD00A50433 /* EMC-HAIER.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9040373A1F28E5FD00A50433 /* EMC-HAIERTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 904037521F28E5FD00A50433 /* Build configuration list for PBXNativeTarget "EMC-HAIERTests" */;
+			buildPhases = (
+				904037371F28E5FD00A50433 /* Sources */,
+				904037381F28E5FD00A50433 /* Frameworks */,
+				904037391F28E5FD00A50433 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9040373D1F28E5FD00A50433 /* PBXTargetDependency */,
+			);
+			name = "EMC-HAIERTests";
+			productName = "EMC-HAIERTests";
+			productReference = 9040373B1F28E5FD00A50433 /* EMC-HAIERTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		904037451F28E5FD00A50433 /* EMC-HAIERUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 904037551F28E5FD00A50433 /* Build configuration list for PBXNativeTarget "EMC-HAIERUITests" */;
+			buildPhases = (
+				904037421F28E5FD00A50433 /* Sources */,
+				904037431F28E5FD00A50433 /* Frameworks */,
+				904037441F28E5FD00A50433 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				904037481F28E5FD00A50433 /* PBXTargetDependency */,
+			);
+			name = "EMC-HAIERUITests";
+			productName = "EMC-HAIERUITests";
+			productReference = 904037461F28E5FD00A50433 /* EMC-HAIERUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9040371A1F28E5FC00A50433 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = sun_sxy_7;
+				TargetAttributes = {
+					904037211F28E5FD00A50433 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					9040373A1F28E5FD00A50433 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 904037211F28E5FD00A50433;
+					};
+					904037451F28E5FD00A50433 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 904037211F28E5FD00A50433;
+					};
+				};
+			};
+			buildConfigurationList = 9040371D1F28E5FC00A50433 /* Build configuration list for PBXProject "EMC-HAIER" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 904037191F28E5FC00A50433;
+			productRefGroup = 904037231F28E5FD00A50433 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				904037211F28E5FD00A50433 /* EMC-HAIER */,
+				9040373A1F28E5FD00A50433 /* EMC-HAIERTests */,
+				904037451F28E5FD00A50433 /* EMC-HAIERUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		904037201F28E5FD00A50433 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				904037351F28E5FD00A50433 /* LaunchScreen.storyboard in Resources */,
+				904037321F28E5FD00A50433 /* Assets.xcassets in Resources */,
+				904037631F28E65E00A50433 /* LICENSE in Resources */,
+				904037301F28E5FD00A50433 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		904037391F28E5FD00A50433 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		904037441F28E5FD00A50433 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9040371E1F28E5FD00A50433 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				904037641F28E65E00A50433 /* README.md in Sources */,
+				904037601F28E65E00A50433 /* CardViewController.m in Sources */,
+				9040372D1F28E5FD00A50433 /* ViewController.m in Sources */,
+				904037621F28E65E00A50433 /* NSData+CommonCrypto.m in Sources */,
+				9040372A1F28E5FD00A50433 /* AppDelegate.m in Sources */,
+				904037271F28E5FD00A50433 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		904037371F28E5FD00A50433 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				904037401F28E5FD00A50433 /* EMC_HAIERTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		904037421F28E5FD00A50433 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9040374B1F28E5FD00A50433 /* EMC_HAIERUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9040373D1F28E5FD00A50433 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 904037211F28E5FD00A50433 /* EMC-HAIER */;
+			targetProxy = 9040373C1F28E5FD00A50433 /* PBXContainerItemProxy */;
+		};
+		904037481F28E5FD00A50433 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 904037211F28E5FD00A50433 /* EMC-HAIER */;
+			targetProxy = 904037471F28E5FD00A50433 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9040372E1F28E5FD00A50433 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9040372F1F28E5FD00A50433 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		904037331F28E5FD00A50433 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				904037341F28E5FD00A50433 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9040374D1F28E5FD00A50433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9040374E1F28E5FD00A50433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		904037501F28E5FD00A50433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EMC",
+				);
+				INFOPLIST_FILE = "EMC-HAIER/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.InterceptWebView.EMC-HAIER";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		904037511F28E5FD00A50433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EMC",
+				);
+				INFOPLIST_FILE = "EMC-HAIER/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.InterceptWebView.EMC-HAIER";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		904037531F28E5FD00A50433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "EMC-HAIERTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.InterceptWebView.EMC-HAIERTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EMC-HAIER.app/EMC-HAIER";
+			};
+			name = Debug;
+		};
+		904037541F28E5FD00A50433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "EMC-HAIERTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.InterceptWebView.EMC-HAIERTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EMC-HAIER.app/EMC-HAIER";
+			};
+			name = Release;
+		};
+		904037561F28E5FD00A50433 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "EMC-HAIERUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.InterceptWebView.EMC-HAIERUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "EMC-HAIER";
+			};
+			name = Debug;
+		};
+		904037571F28E5FD00A50433 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "EMC-HAIERUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.InterceptWebView.EMC-HAIERUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "EMC-HAIER";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9040371D1F28E5FC00A50433 /* Build configuration list for PBXProject "EMC-HAIER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9040374D1F28E5FD00A50433 /* Debug */,
+				9040374E1F28E5FD00A50433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9040374F1F28E5FD00A50433 /* Build configuration list for PBXNativeTarget "EMC-HAIER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				904037501F28E5FD00A50433 /* Debug */,
+				904037511F28E5FD00A50433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		904037521F28E5FD00A50433 /* Build configuration list for PBXNativeTarget "EMC-HAIERTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				904037531F28E5FD00A50433 /* Debug */,
+				904037541F28E5FD00A50433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		904037551F28E5FD00A50433 /* Build configuration list for PBXNativeTarget "EMC-HAIERUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				904037561F28E5FD00A50433 /* Debug */,
+				904037571F28E5FD00A50433 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9040371A1F28E5FC00A50433 /* Project object */;
+}

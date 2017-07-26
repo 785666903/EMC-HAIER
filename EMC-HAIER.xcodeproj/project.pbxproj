@@ -20,6 +20,7 @@
 		904037621F28E65E00A50433 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9040375D1F28E65E00A50433 /* NSData+CommonCrypto.m */; };
 		904037631F28E65E00A50433 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9040375E1F28E65E00A50433 /* LICENSE */; };
 		904037641F28E65E00A50433 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9040375F1F28E65E00A50433 /* README.md */; };
+		9DF43951D7194BF7B33A743E /* libPods-EMC-HAIER.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBDB61DF6493396A726C68B7 /* libPods-EMC-HAIER.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,9 @@
 		9040375D1F28E65E00A50433 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		9040375E1F28E65E00A50433 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9040375F1F28E65E00A50433 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BBDB61DF6493396A726C68B7 /* libPods-EMC-HAIER.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EMC-HAIER.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B609626B9BE4E7C357D00A /* Pods-EMC-HAIER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMC-HAIER.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EMC-HAIER/Pods-EMC-HAIER.debug.xcconfig"; sourceTree = "<group>"; };
+		F816B7441BD4CAD13EC52996 /* Pods-EMC-HAIER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EMC-HAIER.release.xcconfig"; path = "Pods/Target Support Files/Pods-EMC-HAIER/Pods-EMC-HAIER.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				904037611F28E65E00A50433 /* iflyMSC.framework in Frameworks */,
+				9DF43951D7194BF7B33A743E /* libPods-EMC-HAIER.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A0268D39079D3EFA3F8B7EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8B609626B9BE4E7C357D00A /* Pods-EMC-HAIER.debug.xcconfig */,
+				F816B7441BD4CAD13EC52996 /* Pods-EMC-HAIER.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		904037191F28E5FC00A50433 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +115,8 @@
 				9040373E1F28E5FD00A50433 /* EMC-HAIERTests */,
 				904037491F28E5FD00A50433 /* EMC-HAIERUITests */,
 				904037231F28E5FD00A50433 /* Products */,
+				5A0268D39079D3EFA3F8B7EE /* Pods */,
+				B5C2819D1B30EBA152BC8312 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +184,14 @@
 			path = EMC;
 			sourceTree = "<group>";
 		};
+		B5C2819D1B30EBA152BC8312 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBDB61DF6493396A726C68B7 /* libPods-EMC-HAIER.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,9 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9040374F1F28E5FD00A50433 /* Build configuration list for PBXNativeTarget "EMC-HAIER" */;
 			buildPhases = (
+				04F0902BED51E33BADA21CB7 /* [CP] Check Pods Manifest.lock */,
 				9040371E1F28E5FD00A50433 /* Sources */,
 				9040371F1F28E5FD00A50433 /* Frameworks */,
 				904037201F28E5FD00A50433 /* Resources */,
+				EA1A480377AABBE7EDD3835A /* [CP] Embed Pods Frameworks */,
+				C813324E452034E5B15D567B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,6 +324,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04F0902BED51E33BADA21CB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C813324E452034E5B15D567B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EMC-HAIER/Pods-EMC-HAIER-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA1A480377AABBE7EDD3835A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EMC-HAIER/Pods-EMC-HAIER-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9040371E1F28E5FD00A50433 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -393,6 +468,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -440,6 +517,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -456,12 +535,15 @@
 		};
 		904037501F28E5FD00A50433 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8B609626B9BE4E7C357D00A /* Pods-EMC-HAIER.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EMC",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "EMC-HAIER/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.InterceptWebView.EMC-HAIER";
@@ -471,12 +553,15 @@
 		};
 		904037511F28E5FD00A50433 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F816B7441BD4CAD13EC52996 /* Pods-EMC-HAIER.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EMC",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "EMC-HAIER/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.InterceptWebView.EMC-HAIER";
@@ -549,6 +634,7 @@
 				904037511F28E5FD00A50433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		904037521F28E5FD00A50433 /* Build configuration list for PBXNativeTarget "EMC-HAIERTests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +643,7 @@
 				904037541F28E5FD00A50433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		904037551F28E5FD00A50433 /* Build configuration list for PBXNativeTarget "EMC-HAIERUITests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +652,7 @@
 				904037571F28E5FD00A50433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

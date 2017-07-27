@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EMC-HAIER"
-  s.version      = "v1.0.1"
+  s.version      = "1.0.1"
   s.summary      = "haier EMC"
 
   # This description is used to generate tags and improve search results.
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/785666903/EMC-HAIER.git", :tag => "v1.0.1" }
+  s.source       = { :git => "https://github.com/785666903/EMC-HAIER.git", :tag => "1.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

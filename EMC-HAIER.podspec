@@ -120,7 +120,7 @@ Pod::Spec.new do |s|
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
   s.frameworks = "UIKit", "Foundation" ,"CoreTelephony", "CoreGraphics", "QuartzCore", "SystemConfiguration", "AudioToolbox", "AddressBook", "AVFoundation", "CoreLocation", "AssetsLibrary"
-  s.ios.vendored_frameworks = 'EMC/iflyMSC.framework'
+s.ios.vendored_frameworks = 'EMC/iflyMSC.framework'
 
 #s.prefix_header_contents = '#import "iflyMSC/IFlyMSC.h"'
 #s.prefix_header_file = "EMC/PrefixHeader.pch'

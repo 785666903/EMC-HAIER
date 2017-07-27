@@ -343,7 +343,7 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
 //        urlString = [NSString stringWithFormat:@"%@?sdToken=%@&coSessionId=%@&appName=%@&phoneNumber=%@&username=%@&signature=%@&entryPoint=%@", zhengshiUrl, self.sdToken, self.coSessionId, self.appName, self.phoneNumber, self.userName, self.signature, self.entryPoint];
         urlString = [NSString stringWithFormat:@"%@?sdToken=%@&coSessionId=%@&appName=%@&phoneNumber=%@&username=%@&signature=%@&entryPoint=%@", zhengshiUrl, self.accessToken, self.coSessionId, self.phoneNumber, self.phoneNumber, self.userName, self.HMAC_sha1_string, self.entryPoint];
     } else {
-        urlString = [NSString stringWithFormat:@"%@?sdToken=%@&coSessionId=%@&appName=%@&phoneNumber=%@&username=%@&signature=%@&entryPoint=%@", ceshiUrl, self.accessToken, self.coSessionId, self.appName, self.phoneNumber, self.userName, self.signature, self.entryPoint];
+        urlString = [NSString stringWithFormat:@"%@?sdToken=%@&coSessionId=%@&appName=%@&phoneNumber=%@&username=%@&signature=%@&entryPoint=%@", ceshiUrl, self.accessToken, self.coSessionId, self.phoneNumber, self.phoneNumber, self.userName, self.HMAC_sha1_string, self.entryPoint];
     }
     NSLog(@"EMC_URL = %@",[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
     NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];

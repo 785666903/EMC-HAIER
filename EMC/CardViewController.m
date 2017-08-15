@@ -200,7 +200,14 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
 //得到用户中心需要的code
 - (void)getCode {
     
-    NSURL *url = [NSURL URLWithString:@"http://account.haier.com/oauth/authorize?client_id=aftersale&response_type=code&redirect_uri=http://123.103.113.64"];
+    NSString *urlStr = @"";
+    if (self.isOffical) {
+        urlStr = @"http://account.haier.com/oauth/authorize?client_id=aftersale&response_type=code&redirect_uri=http://123.103.113.64";
+    }else{
+        urlStr = [NSString stringWithFormat:@"http://taccount.haier.com/oauth/authorize?client_id=aftersale&response_type=code&redirect_uri=http://123.103.113.64"];
+    }
+    
+    NSURL *url = [NSURL URLWithString:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSMutableURLRequest *quest = [NSMutableURLRequest requestWithURL:url];
     quest.HTTPMethod = @"GET";
     
@@ -242,9 +249,14 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
             NSString *value = [NSString stringWithFormat:@"Basic %@",base64String];
             [manager.requestSerializer setValue:value forHTTPHeaderField:@"Authorization"];
             
-            NSString *url = [NSString stringWithFormat:@"http://account.haier.com/oauth/token?grant_type=authorization_code&code=%@&redirect_uri=http://123.103.113.64",code];
+            NSString *urlStr = @"";
+            if (self.isOffical) {
+                urlStr = [NSString stringWithFormat:@"http://account.haier.com/oauth/token?grant_type=authorization_code&code=%@&redirect_uri=http://123.103.113.64",code];
+            }else{
+                urlStr = [NSString stringWithFormat:@"http://taccount.haier.com/oauth/token?grant_type=authorization_code&code=%@&redirect_uri=http://123.103.113.64",code];
+            }
             
-            [manager POST:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+            [manager POST:urlStr parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
                 NSString *result = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
                 NSLog(@"%@",responseObject);
                 
@@ -277,7 +289,12 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
     NSString *value = [NSString stringWithFormat:@"Bearer %@",self.accessToken];
     [manager.requestSerializer setValue:value forHTTPHeaderField:@"Authorization"];
     
-    NSString *url = [NSString stringWithFormat:@"http://account-api.haier.net/userinfo"];
+    NSString *url = @"";
+    if (self.isOffical) {
+        url = [NSString stringWithFormat:@"http://account-api.haier.net/userinfo"];
+    }else{
+        url = [NSString stringWithFormat:@"http://taccount-api.haier.net/userinfo"];
+    }
     
     [manager GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSString *result = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];

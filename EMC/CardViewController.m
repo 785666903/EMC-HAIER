@@ -322,7 +322,7 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
 //HmacSHA1加密
 - (NSString *)Base_HmacSha1:(NSString *)key data:(NSString *)data{
     const char *cKey  = [key cStringUsingEncoding:NSASCIIStringEncoding];
-    const char *cData = [data cStringUsingEncoding:NSASCIIStringEncoding];
+    const char *cData = [data cStringUsingEncoding:NSUTF8StringEncoding];
     //Sha256:
     // unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
     //CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);

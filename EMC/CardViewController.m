@@ -40,7 +40,7 @@ NSString * const ceshiUrl = @"http://123.103.113.64/";
 NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
 
 
-@interface CardViewController ()<UIWebViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate,QRcodeDelegate,NSURLSessionDelegate>
+@interface CardViewController ()<UIWebViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate,QRcodeDelegate,NSURLSessionDelegate,UIAlertViewDelegate>
 {
     NSString *_uploadImageMethod;
     NSString *_methodName;
@@ -232,13 +232,21 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
         NSString *code = dic[@"Location"];
         if ([code rangeOfString:@"="].location == NSNotFound) {
             NSLog(@"code 不存在 =");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"token失效" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            alert.delegate = self;
+            [alert show];
         } else {
             NSRange range = [code rangeOfString:@"="];
             code = [code substringFromIndex:range.location + 1];
             NSLog(@"%@",code);
             
             //post请求获取用户中心的accessToken
-            NSString *text = @"aftersale:af7sktsA1g1u_s";
+            NSString *text = @"";
+            if (self.isOffical) {
+                text = @"aftersale:af7sktsA1g1u_s";
+            }else {
+                text = @"aftersale:uauAoenvVVikrj";
+            }
             NSData *data2 = [text dataUsingEncoding:NSUTF8StringEncoding];
             NSString *base64String = [data2 base64EncodedStringWithOptions:0];
             
@@ -293,7 +301,7 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
     if (self.isOffical) {
         url = [NSString stringWithFormat:@"http://account-api.haier.net/userinfo"];
     }else{
-        url = [NSString stringWithFormat:@"http://taccount-api.haier.net/userinfo"];
+        url = [NSString stringWithFormat:@"http://taccount.haier.com/userinfo"];
     }
     
     [manager GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -360,7 +368,7 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
 //        urlString = [NSString stringWithFormat:@"%@?sdToken=%@&coSessionId=%@&appName=%@&phoneNumber=%@&username=%@&signature=%@&entryPoint=%@", zhengshiUrl, self.sdToken, self.coSessionId, self.appName, self.phoneNumber, self.userName, self.signature, self.entryPoint];
         urlString = [NSString stringWithFormat:@"%@?sdToken=%@&coSessionId=%@&appName=%@&phoneNumber=%@&username=%@&signature=%@&entryPoint=%@", zhengshiUrl, self.accessToken, self.coSessionId, self.phoneNumber, self.phoneNumber, self.userName, self.HMAC_sha1_string, self.entryPoint];
     } else {
-        urlString = [NSString stringWithFormat:@"%@?sdToken=%@&coSessionId=%@&appName=%@&phoneNumber=%@&username=%@&signature=%@&entryPoint=%@", ceshiUrl, self.accessToken, self.coSessionId, self.phoneNumber, self.phoneNumber, self.userName, self.HMAC_sha1_string, self.entryPoint];
+        urlString = [NSString stringWithFormat:@"%@?sdToken=%@&coSessionId=%@&appName=%@&phoneNumber=%@&username=%@&signature=%@&entryPoint=%@", zhengshiUrl, self.accessToken, self.coSessionId, self.phoneNumber, self.phoneNumber, self.userName, self.HMAC_sha1_string, self.entryPoint];
     }
     NSLog(@"EMC_URL = %@",[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
     NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -667,6 +675,20 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
     NSString *jsMethod = [NSString stringWithFormat:@"%@('%@')", _methodName, resultValue];
     [self.emcWebView stringByEvaluatingJavaScriptFromString:jsMethod];
 }
+
+#pragma mark - UIAlertController
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == 0) {
+        UIViewController *vc = self.presentingViewController;
+        while (vc.presentingViewController) {
+            vc = vc.presentingViewController;
+        }
+        [vc dismissViewControllerAnimated:YES completion:NULL];
+    }
+}
+
+
 
 /*
 #pragma mark - Navigation

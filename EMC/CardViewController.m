@@ -412,12 +412,15 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
 
 }
 
-////当在请求加载中发生错误时，得到通知。会提供一个NSSError对象，以标识所发生错误类型。
-//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请求失败或无网络连接" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//    alert.delegate = self;
-//    [alert show];
-//}
+//当在请求加载中发生错误时，得到通知。会提供一个NSSError对象，以标识所发生错误类型。
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    NSDictionary *userInfo = error.userInfo;
+    if (userInfo.count == 4) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请求失败或无网络连接" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        alert.delegate = self;
+        [alert show];
+    }
+}
 
 
 - (void)afnCheckNetwork {

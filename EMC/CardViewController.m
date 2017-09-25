@@ -18,6 +18,7 @@
 #import <AFNetworking/AFNetworking.h>
 
 #import "NSData+CommonCrypto.h"
+#import "MBProgressHUD.h"
 
 
 #ifdef DEBUG
@@ -51,6 +52,7 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
 @property (nonatomic, strong) UIWebView *emcWebView;
 @property (nonatomic, strong) NSMutableString *recordsResult;
 @property (nonatomic, copy) NSString *HMAC_sha1_string;
+@property (nonatomic, strong) MBProgressHUD *hud;
 
 @end
 
@@ -278,6 +280,9 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
                 
             } failure:^(NSURLSessionDataTask *task, NSError *error) {
                 NSLog(@"%@",error);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.hud hideAnimated:YES];
+                });
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请求失败或无网络连接" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
                 alert.delegate = self;
                 [alert show];
@@ -326,6 +331,9 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@",error);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.hud hideAnimated:YES];
+        });
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请求失败或无网络连接" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         alert.delegate = self;
         [alert show];
@@ -363,8 +371,8 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
 }
 
 - (void)initWebView {
-//    self.emcWebView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 20)];
-    self.emcWebView = [[UIWebView alloc]initWithFrame:self.view.frame];
+    self.emcWebView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 20)];
+//    self.emcWebView = [[UIWebView alloc]initWithFrame:self.view.frame];
     self.emcWebView.scrollView.bounces = NO;
     self.emcWebView.delegate = self;
     [self.view addSubview:self.emcWebView];
@@ -381,6 +389,9 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.emcWebView loadRequest:request];
     
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud.label.text = NSLocalizedString(@"加载中...", @"HUD loading title");
+    
 }
 
 -(void)webViewDidStartLoad:(UIWebView *)webView
@@ -392,18 +403,21 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     NSLog(@"end");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.hud hideAnimated:YES];
+    });
     if (webView.isLoading) {
         return;
     }
 
 }
 
-//当在请求加载中发生错误时，得到通知。会提供一个NSSError对象，以标识所发生错误类型。
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请求失败或无网络连接" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    alert.delegate = self;
-    [alert show];
-}
+////当在请求加载中发生错误时，得到通知。会提供一个NSSError对象，以标识所发生错误类型。
+//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请求失败或无网络连接" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//    alert.delegate = self;
+//    [alert show];
+//}
 
 
 - (void)afnCheckNetwork {

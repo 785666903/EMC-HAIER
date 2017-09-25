@@ -143,5 +143,6 @@ s.ios.vendored_frameworks = 'EMC/iflyMSC.framework'
   # s.dependency "JSONKit", "~> 1.4"
   s.dependency "AFNetworking", "~> 3.1.0"
   s.dependency "QRScan", "~> 1.0.1"
+  s.dependency "MBProgressHUD", "~> 1.0.0"
 
 end

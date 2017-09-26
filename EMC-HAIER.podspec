@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EMC-HAIER"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "haier EMC"
 
   # This description is used to generate tags and improve search results.
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/785666903/EMC-HAIER.git", :tag => "1.0.7" }
+  s.source       = { :git => "https://github.com/785666903/EMC-HAIER.git", :tag => "1.0.8" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -143,6 +143,5 @@ s.ios.vendored_frameworks = 'EMC/iflyMSC.framework'
   # s.dependency "JSONKit", "~> 1.4"
   s.dependency "AFNetworking", "~> 3.1.0"
   s.dependency "QRScan", "~> 1.0.1"
-  s.dependency "MBProgressHUD", "~> 1.0.0"
 
 end

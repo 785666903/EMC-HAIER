@@ -18,7 +18,7 @@
 #import <AFNetworking/AFNetworking.h>
 
 #import "NSData+CommonCrypto.h"
-#import "MBProgressHUD.h"
+#import "MBProgressHUD_EMC.h"
 
 
 #ifdef DEBUG
@@ -52,7 +52,7 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
 @property (nonatomic, strong) UIWebView *emcWebView;
 @property (nonatomic, strong) NSMutableString *recordsResult;
 @property (nonatomic, copy) NSString *HMAC_sha1_string;
-@property (nonatomic, strong) MBProgressHUD *hud;
+@property (nonatomic, strong) MBProgressHUD_EMC *hud;
 
 @end
 
@@ -389,7 +389,7 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.emcWebView loadRequest:request];
     
-    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud = [MBProgressHUD_EMC showHUDAddedTo:self.view animated:YES];
     self.hud.label.text = NSLocalizedString(@"加载中...", @"HUD loading title");
     
 }

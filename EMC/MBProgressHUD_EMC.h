@@ -30,11 +30,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-@class MBBackgroundView;
+@class MBBackgroundView_EMC;
 @protocol MBProgressHUDDelegate;
 
 
-extern CGFloat const MBProgressMaxOffset;
+extern CGFloat const MBProgressMaxOffset_EMC;
 
 typedef NS_ENUM(NSInteger, MBProgressHUDMode) {
     /// UIActivityIndicatorView.
@@ -273,12 +273,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * The view containing the labels and indicator (or customView).
  */
-@property (strong, nonatomic, readonly) MBBackgroundView *bezelView;
+@property (strong, nonatomic, readonly) MBBackgroundView_EMC *bezelView;
 
 /**
  * View covering the entire HUD area, placed behind bezelView.
  */
-@property (strong, nonatomic, readonly) MBBackgroundView *backgroundView;
+@property (strong, nonatomic, readonly) MBBackgroundView_EMC *backgroundView;
 
 /**
  * The UIView (e.g., a UIImageView) to be shown when the HUD is in MBProgressHUDModeCustomView.
@@ -320,7 +320,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A progress view for showing definite progress by filling up a circle (pie chart).
  */
-@interface MBRoundProgressView : UIView 
+@interface MBRoundProgressView_EMC : UIView 
 
 /**
  * Progress (0.0 to 1.0)
@@ -351,7 +351,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A flat bar progress view. 
  */
-@interface MBBarProgressView : UIView
+@interface MBBarProgressView_EMC : UIView
 
 /**
  * Progress (0.0 to 1.0)
@@ -379,7 +379,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-@interface MBBackgroundView : UIView
+@interface MBBackgroundView_EMC : UIView
 
 /**
  * The background style. 

@@ -18,7 +18,7 @@
 
 #define MBMainThreadAssert() NSAssert([NSThread isMainThread], @"MBProgressHUD needs to be accessed on the main thread.");
 
-CGFloat const MBProgressMaxOffset = 1000000.f;
+CGFloat const MBProgressMaxOffset_EMC = 1000000.f;
 
 static const CGFloat MBDefaultPadding = 4.f;
 static const CGFloat MBDefaultLabelFontSize = 16.f;
@@ -50,7 +50,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 @end
 
 
-@interface MBProgressHUDRoundedButton : UIButton
+@interface MBProgressHUDRoundedButton_EMC : UIButton
 @end
 
 
@@ -313,7 +313,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 - (void)setupViews {
     UIColor *defaultColor = self.contentColor;
 
-    MBBackgroundView *backgroundView = [[MBBackgroundView alloc] initWithFrame:self.bounds];
+    MBBackgroundView_EMC *backgroundView = [[MBBackgroundView_EMC alloc] initWithFrame:self.bounds];
     backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
     backgroundView.backgroundColor = [UIColor clearColor];
     backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -321,7 +321,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     [self addSubview:backgroundView];
     _backgroundView = backgroundView;
 
-    MBBackgroundView *bezelView = [MBBackgroundView new];
+    MBBackgroundView_EMC *bezelView = [MBBackgroundView_EMC new];
     bezelView.translatesAutoresizingMaskIntoConstraints = NO;
     bezelView.layer.cornerRadius = 5.f;
     bezelView.alpha = 0.f;
@@ -348,7 +348,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     detailsLabel.backgroundColor = [UIColor clearColor];
     _detailsLabel = detailsLabel;
 
-    UIButton *button = [MBProgressHUDRoundedButton buttonWithType:UIButtonTypeCustom];
+    UIButton *button = [MBProgressHUDRoundedButton_EMC buttonWithType:UIButtonTypeCustom];
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
     button.titleLabel.font = [UIFont boldSystemFontOfSize:MBDefaultDetailsLabelFontSize];
     [button setTitleColor:defaultColor forState:UIControlStateNormal];
@@ -377,7 +377,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 - (void)updateIndicators {
     UIView *indicator = self.indicator;
     BOOL isActivityIndicator = [indicator isKindOfClass:[UIActivityIndicatorView class]];
-    BOOL isRoundIndicator = [indicator isKindOfClass:[MBRoundProgressView class]];
+    BOOL isRoundIndicator = [indicator isKindOfClass:[MBRoundProgressView_EMC class]];
 
     MBProgressHUDMode mode = self.mode;
     if (mode == MBProgressHUDModeIndeterminate) {
@@ -392,18 +392,18 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     else if (mode == MBProgressHUDModeDeterminateHorizontalBar) {
         // Update to bar determinate indicator
         [indicator removeFromSuperview];
-        indicator = [[MBBarProgressView alloc] init];
+        indicator = [[MBBarProgressView_EMC alloc] init];
         [self.bezelView addSubview:indicator];
     }
     else if (mode == MBProgressHUDModeDeterminate || mode == MBProgressHUDModeAnnularDeterminate) {
         if (!isRoundIndicator) {
             // Update to determinante indicator
             [indicator removeFromSuperview];
-            indicator = [[MBRoundProgressView alloc] init];
+            indicator = [[MBRoundProgressView_EMC alloc] init];
             [self.bezelView addSubview:indicator];
         }
         if (mode == MBProgressHUDModeAnnularDeterminate) {
-            [(MBRoundProgressView *)indicator setAnnular:YES];
+            [(MBRoundProgressView_EMC *)indicator setAnnular:YES];
         }
     } 
     else if (mode == MBProgressHUDModeCustomView && self.customView != indicator) {
@@ -459,31 +459,31 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         if (appearance.color == nil) {
             ((UIActivityIndicatorView *)indicator).color = color;
         }
-    } else if ([indicator isKindOfClass:[MBRoundProgressView class]]) {
-        MBRoundProgressView *appearance = nil;
+    } else if ([indicator isKindOfClass:[MBRoundProgressView_EMC class]]) {
+        MBRoundProgressView_EMC *appearance = nil;
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 90000
-        appearance = [MBRoundProgressView appearanceWhenContainedIn:[MBProgressHUD_EMC class], nil];
+        appearance = [MBRoundProgressView_EMC appearanceWhenContainedIn:[MBProgressHUD_EMC class], nil];
 #else
-        appearance = [MBRoundProgressView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]];
+        appearance = [MBRoundProgressView_EMC appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]];
 #endif
         if (appearance.progressTintColor == nil) {
-            ((MBRoundProgressView *)indicator).progressTintColor = color;
+            ((MBRoundProgressView_EMC *)indicator).progressTintColor = color;
         }
         if (appearance.backgroundTintColor == nil) {
-            ((MBRoundProgressView *)indicator).backgroundTintColor = [color colorWithAlphaComponent:0.1];
+            ((MBRoundProgressView_EMC *)indicator).backgroundTintColor = [color colorWithAlphaComponent:0.1];
         }
-    } else if ([indicator isKindOfClass:[MBBarProgressView class]]) {
-        MBBarProgressView *appearance = nil;
+    } else if ([indicator isKindOfClass:[MBBarProgressView_EMC class]]) {
+        MBBarProgressView_EMC *appearance = nil;
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 90000
-        appearance = [MBBarProgressView appearanceWhenContainedIn:[MBProgressHUD_EMC class], nil];
+        appearance = [MBBarProgressView_EMC appearanceWhenContainedIn:[MBProgressHUD_EMC class], nil];
 #else
-        appearance = [MBBarProgressView appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]];
+        appearance = [MBBarProgressView_EMC appearanceWhenContainedInInstancesOfClasses:@[[MBProgressHUD class]]];
 #endif
         if (appearance.progressColor == nil) {
-            ((MBBarProgressView *)indicator).progressColor = color;
+            ((MBBarProgressView_EMC *)indicator).progressColor = color;
         }
         if (appearance.lineColor == nil) {
-            ((MBBarProgressView *)indicator).lineColor = color;
+            ((MBBarProgressView_EMC *)indicator).lineColor = color;
         }
     } else {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 || TARGET_OS_TV
@@ -496,7 +496,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
 - (void)updateBezelMotionEffects {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 || TARGET_OS_TV
-    MBBackgroundView *bezelView = self.bezelView;
+    MBBackgroundView_EMC *bezelView = self.bezelView;
     if (![bezelView respondsToSelector:@selector(addMotionEffect:)]) return;
 
     if (self.defaultMotionEffectsEnabled) {
@@ -824,7 +824,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 @end
 
 
-@implementation MBRoundProgressView
+@implementation MBRoundProgressView_EMC
 
 #pragma mark - Lifecycle
 
@@ -945,7 +945,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 @end
 
 
-@implementation MBBarProgressView
+@implementation MBBarProgressView_EMC
 
 #pragma mark - Lifecycle
 
@@ -1087,7 +1087,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 @end
 
 
-@interface MBBackgroundView ()
+@interface MBBackgroundView_EMC ()
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000 || TARGET_OS_TV
 @property UIVisualEffectView *effectView;
@@ -1099,7 +1099,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 @end
 
 
-@implementation MBBackgroundView
+@implementation MBBackgroundView_EMC
 
 #pragma mark - Lifecycle
 
@@ -1404,7 +1404,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 }
 
 - (BOOL)dimBackground {
-    MBBackgroundView *backgroundView = self.backgroundView;
+    MBBackgroundView_EMC *backgroundView = self.backgroundView;
     UIColor *dimmedColor =  [UIColor colorWithWhite:0.f alpha:.2f];
     return backgroundView.style == MBProgressHUDBackgroundStyleSolidColor && [backgroundView.color isEqual:dimmedColor];
 }
@@ -1435,7 +1435,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
 @end
 
-@implementation MBProgressHUDRoundedButton
+@implementation MBProgressHUDRoundedButton_EMC
 
 #pragma mark - Lifecycle
 

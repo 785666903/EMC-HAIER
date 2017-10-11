@@ -202,6 +202,9 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
 //得到用户中心需要的code
 - (void)getCode {
     
+    self.hud = [MBProgressHUD_EMC showHUDAddedTo:self.view animated:YES];
+    self.hud.label.text = NSLocalizedString(@"加载中...", @"HUD loading title");
+    
     NSString *urlStr = @"";
     if (self.isOffical) {
         urlStr = @"http://account.haier.com/oauth/authorize?client_id=aftersale&response_type=code&redirect_uri=http://123.103.113.64";

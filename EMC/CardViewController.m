@@ -199,6 +199,10 @@ NSString * const zhengshiUrl = @"http://emc-web.haier.net:9000/";
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = NO;
+}
+
 //得到用户中心需要的code
 - (void)getCode {
     
@@ -567,7 +571,11 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
         return NO;
     } else if ([[array firstObject] isEqual:@"ios:getCloseAll"]) {
         //保修卡首页关闭,回到主U+
-        [self dismissViewControllerAnimated:YES completion:NULL];
+        if (self.navigationController.topViewController == self) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
         return NO;
     }
     

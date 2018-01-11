@@ -571,7 +571,7 @@ willPerformHTTPRedirection:(NSHTTPURLResponse *)response
         return NO;
     } else if ([[array firstObject] isEqual:@"ios:getCloseAll"]) {
         //保修卡首页关闭,回到主U+
-        if (self.navigationController.topViewController == self) {
+        if (self.navigationController.topViewController == self && self.navigationController.viewControllers.count > 1) {
             [self.navigationController popViewControllerAnimated:YES];
         } else {
             [self dismissViewControllerAnimated:YES completion:nil];
